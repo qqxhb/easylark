@@ -1,0 +1,87 @@
+# EasyLark
+
+EasyLark is a simple and easy-to-use Go SDK for the Feishu (Lark) Open Platform API, designed to help developers more easily integrate Feishu's functionality into their applications.
+
+## Features
+
+- Simple and easy-to-use API design
+- Complete type definitions
+- Built-in error handling
+- Support for Feishu authentication
+- Support for message sending functionality
+- Support for spreadsheet operations
+
+## Installation
+
+```bash
+go get github.com/qqxhb/easylark
+```
+
+## Quick Start
+
+### Initialize Client
+
+```go
+import "github.com/qqxhb/easylark"
+
+func main() {
+    client := easylark.NewClient("your-app-id", "your-app-secret")
+    
+    // Use the client to call APIs
+    // ...
+}
+```
+
+### Send Messages
+
+```go
+// Send text message to a group
+err := client.Message.SendText("chat_id", "Hello from EasyLark!")
+if err != nil {
+    // Handle error
+}
+
+// Send rich text message
+card := easylark.NewMessageCard().SetTitle("Title").AddText("Content")
+err = client.Message.SendCard("chat_id", card)
+if err != nil {
+    // Handle error
+}
+```
+
+### Operate Spreadsheets
+
+```go
+// Get spreadsheet metadata
+sheet, err := client.Sheet.Get("sheet_token")
+if err != nil {
+    // Handle error
+}
+
+// Read spreadsheet content
+values, err := client.Sheet.ReadRange("sheet_token", "Sheet1!A1:C3")
+if err != nil {
+    // Handle error
+}
+
+// Write spreadsheet content
+err = client.Sheet.WriteRange("sheet_token", "Sheet1!A1:B2", [][]interface{}{
+    {"Name", "Age"},
+    {"John", 25},
+})
+if err != nil {
+    // Handle error
+}
+```
+
+## Documentation
+
+For detailed API documentation, please refer to [here](https://godoc.org/github.com/qqxhb/easylark).
+
+## Contribution
+
+Issues and PRs are welcome!
+
+## License
+
+MIT
