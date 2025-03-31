@@ -14,7 +14,7 @@ EasyLark 是一个简单易用的飞书(Lark)开放平台 API 的 Go SDK，旨�
 ## 安装
 
 ```bash
-go get github.com/yourusername/easylark
+go get github.com/qqxhb/easylark
 ```
 
 ## 快速开始
@@ -22,7 +22,7 @@ go get github.com/yourusername/easylark
 ### 初始化客户端
 
 ```go
-import "github.com/yourusername/easylark"
+import "github.com/qqxhb/easylark"
 
 func main() {
     client := easylark.NewClient("your-app-id", "your-app-secret")
