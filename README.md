@@ -76,7 +76,7 @@ if err != nil {
 
 ## 文档
 
-详细的API文档请参考[这里](https://godoc.org/github.com/yourusername/easylark)。
+详细的API文档请参考[这里](https://godoc.org/github.com/qqxhb/easylark)。
 
 ## 贡献
 
